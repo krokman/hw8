@@ -17,11 +17,14 @@ public class AsciiCharSequence implements CharSequence {
 
 	@Override
 	public CharSequence subSequence(int start, int end) {
-		StringBuilder buffer = new StringBuilder();
+		byte[] buffer = new byte[end-start];
+		int j = 0;
 		for (int i = start; i < end; i++) {
-			buffer.append(charAt(i));
+			buffer[j] = array[i];
+			j++;
 		}
-		return buffer.toString();
+		AsciiCharSequence out = new AsciiCharSequence(buffer);
+		return out;
 	}
 
 	@Override
