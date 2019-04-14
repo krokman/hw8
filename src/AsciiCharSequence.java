@@ -23,8 +23,7 @@ public class AsciiCharSequence implements CharSequence {
 			buffer[j] = array[i];
 			j++;
 		}
-		AsciiCharSequence out = new AsciiCharSequence(buffer);
-		return out;
+		return new AsciiCharSequence(buffer);
 	}
 
 	@Override

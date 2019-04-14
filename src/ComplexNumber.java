@@ -1,46 +1,46 @@
-import java.util.HashMap;
-
 public final class ComplexNumber {
-	private final double re;
-	private final double im;
+	private final double FIRST_NUMBER;
+	private final double SECOND_NUMBER;
 
-	public ComplexNumber(double re, double im){
-		this.re = re;
-		this.im = im;
+	public ComplexNumber(double FIRST_NUMBER, double SECOND_NUMBER) {
+		this.FIRST_NUMBER = FIRST_NUMBER;
+		this.SECOND_NUMBER = SECOND_NUMBER;
 	}
-	public double getRe(){
-		return re;
+
+	public double getFirst() {
+		return FIRST_NUMBER;
 	}
-	public double getIm(){
-		return im;
+
+	public double getSecond() {
+		return SECOND_NUMBER;
 	}
 
 	@Override
 	public int hashCode() {
 		int result = 17;
 		int ofZero = 1;
-		int reHashCode = ofZero + Double.hashCode(re);
-		int imHashCode = ofZero + Double.hashCode(re);
-		result = ofZero + result*(reHashCode + imHashCode);
+		int reHashCode = ofZero + Double.hashCode(FIRST_NUMBER);
+		int imHashCode = ofZero + Double.hashCode(SECOND_NUMBER);
+		result = ofZero + result * (reHashCode + imHashCode);
 		return result;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if(this == obj){
+		if (this == obj) {
 			return true;
 		}
-		if(obj == null){
+		if (obj == null) {
 			return false;
 		}
-		if(this.hashCode() != obj.hashCode()){
+		if (this.hashCode() != obj.hashCode()) {
 			return false;
 		}
-		if(!(obj instanceof  ComplexNumber)){
+		if (!(obj instanceof ComplexNumber)) {
 			return false;
 		}
 		ComplexNumber anotherObj = (ComplexNumber) obj;
-		if(re == anotherObj.re && im == anotherObj.im){
+		if (FIRST_NUMBER == anotherObj.FIRST_NUMBER && SECOND_NUMBER == anotherObj.SECOND_NUMBER) {
 			return true;
 		}
 		return false;
