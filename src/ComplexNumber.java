@@ -1,27 +1,27 @@
 public final class ComplexNumber {
-	private final double FIRST_NUMBER;
-	private final double SECOND_NUMBER;
+	private final double REAL;
+	private final double IMAGINARY ;
 
-	public ComplexNumber(double FIRST_NUMBER, double SECOND_NUMBER) {
-		this.FIRST_NUMBER = FIRST_NUMBER;
-		this.SECOND_NUMBER = SECOND_NUMBER;
+	public ComplexNumber(double REAL, double IMAGINARY) {
+		this.REAL = REAL;
+		this.IMAGINARY = IMAGINARY;
 	}
 
-	public double getFirst() {
-		return FIRST_NUMBER;
+	public double getReal() {
+		return REAL;
 	}
 
-	public double getSecond() {
-		return SECOND_NUMBER;
+	public double getImaginary() {
+		return IMAGINARY;
 	}
 
 	@Override
 	public int hashCode() {
 		int result = 17;
 		int ofZero = 1;
-		int firstHashCode = ofZero + Double.hashCode(FIRST_NUMBER);
-		int secondHashCode = ofZero + Double.hashCode(SECOND_NUMBER);
-		result = ofZero + result * (firstHashCode + secondHashCode);
+		int realHashCode = ofZero + Double.hashCode(REAL);
+		int imaginarydHashCode = ofZero + Double.hashCode(IMAGINARY);
+		result = ofZero + result * (realHashCode + imaginarydHashCode);
 		return result;
 	}
 
@@ -40,7 +40,7 @@ public final class ComplexNumber {
 			return false;
 		}
 		ComplexNumber anotherObj = (ComplexNumber) obj;
-		if (FIRST_NUMBER == anotherObj.FIRST_NUMBER && SECOND_NUMBER == anotherObj.SECOND_NUMBER) {
+		if (REAL == anotherObj.REAL && IMAGINARY == anotherObj.IMAGINARY) {
 			return true;
 		}
 		return false;
