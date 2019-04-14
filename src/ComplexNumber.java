@@ -19,9 +19,9 @@ public final class ComplexNumber {
 	public int hashCode() {
 		int result = 17;
 		int ofZero = 1;
-		int reHashCode = ofZero + Double.hashCode(FIRST_NUMBER);
-		int imHashCode = ofZero + Double.hashCode(SECOND_NUMBER);
-		result = ofZero + result * (reHashCode + imHashCode);
+		int firstHashCode = ofZero + Double.hashCode(FIRST_NUMBER);
+		int secondHashCode = ofZero + Double.hashCode(SECOND_NUMBER);
+		result = ofZero + result * (firstHashCode + secondHashCode);
 		return result;
 	}
 
